@@ -25,6 +25,11 @@ class ScrollingActivity : AppCompatActivity() {
                 fabAlignmentMode =
                     if (fabAlignmentMode == BottomAppBar.FAB_ALIGNMENT_MODE_CENTER) BottomAppBar.FAB_ALIGNMENT_MODE_END else BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
             }
+            setNavigationOnClickListener {
+                Snackbar.make(binding.root, R.string.message_action_success, Snackbar.LENGTH_LONG)
+                    .setAnchorView(binding.fab)
+                    .show()
+            }
         }
     }
 
