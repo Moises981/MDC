@@ -11,6 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="?attr/actionBarSize"
         android:orientation="vertical">
 
         <com.google.android.material.card.MaterialCardView
@@ -20,7 +21,7 @@
             android:layout_marginTop="@dimen/common_padding_min"
             android:clickable="true"
             android:focusable="true"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -201,6 +202,7 @@
                     app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
 
                 <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/btnToggleGroup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/common_padding_default"
@@ -230,6 +232,17 @@
                         android:text="@string/card_toggle_green" />
 
                 </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_padding_middle"
+                    android:layout_marginBottom="@dimen/common_padding_min"
+                    android:text="@string/card_btn_skip"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/tvTitleAlt"
+                    app:layout_constraintTop_toBottomOf="@id/btnToggleGroup" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
