@@ -35,8 +35,8 @@ class ScrollingActivity : AppCompatActivity() {
         }
 
         with(binding.content) {
-            btnSkip?.setOnClickListener {
-                cvAd?.visibility = View.GONE
+            btnSkip.setOnClickListener {
+                cvAd.visibility = View.GONE
             }
             btnBuy.setOnClickListener {
                 Snackbar.make(it, R.string.card_btn_buying, Snackbar.LENGTH_LONG)
@@ -59,6 +59,12 @@ class ScrollingActivity : AppCompatActivity() {
 
             cbEnablePass.setOnClickListener {
                 tilPassword.isEnabled = !tilPassword.isEnabled
+            }
+
+            etUrl.setOnFocusChangeListener { view, focused ->
+                if (!focused) {
+
+                }
             }
         }
     }
