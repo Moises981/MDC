@@ -51,22 +51,27 @@ class ScrollingActivity : AppCompatActivity() {
                     .show()
             }
 
-            Glide.with(this@ScrollingActivity)
-                .load("https://i.ytimg.com/vi/uNhAHzUpsXQ/hqdefault.jpg")
-                .centerCrop()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(this.imgCover)
+            loadImage("https://i.ytimg.com/vi/uNhAHzUpsXQ/hqdefault.jpg")
 
             cbEnablePass.setOnClickListener {
                 tilPassword.isEnabled = !tilPassword.isEnabled
             }
 
-            etUrl.setOnFocusChangeListener { view, focused ->
+            etUrl.setOnFocusChangeListener { _, focused ->
+                val url = etUrl.text.toString()
                 if (!focused) {
-
+                    loadImage(url)
                 }
             }
         }
+    }
+
+    private fun loadImage(url: String) {
+        Glide.with(this)
+            .load(url)
+            .centerCrop()
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .into(binding.content.imgCover)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
