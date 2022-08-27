@@ -1,14 +1,14 @@
 package com.example.mdc
 
 import android.os.Bundle
-import com.google.android.material.appbar.CollapsingToolbarLayout
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import  com.example.mdc.databinding.ActivityScrollingBinding
 import com.google.android.material.bottomappbar.BottomAppBar
 
@@ -50,6 +50,12 @@ class ScrollingActivity : AppCompatActivity() {
                     }
                     .show()
             }
+
+            Glide.with(this@ScrollingActivity)
+                .load("https://i.ytimg.com/vi/uNhAHzUpsXQ/hqdefault.jpg")
+                .centerCrop()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(this.imgCover)
         }
     }
 
