@@ -56,6 +56,10 @@ class ScrollingActivity : AppCompatActivity() {
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(this.imgCover)
+
+            cbEnablePass.setOnClickListener {
+                tilPassword.isEnabled = !tilPassword.isEnabled
+            }
         }
     }
 
